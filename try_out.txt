@@ -1,0 +1,6 @@
+1. in the function pointer table/array, you haven't used the & in front of Chip8::table0[...]= ;
+see if this could lead to any problems and if u have to make any changes
+
+2. again in the Table0Decode type functions, you havent dereferenced the function poinnter ( which you dont have to either) but see if it breaks something
+
+3. In loadROM function, try changing the order of const and char, and also try to use 'string&' as an arguement to same
