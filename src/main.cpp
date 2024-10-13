@@ -30,10 +30,10 @@ int main(int argc, char* argv[])
 
 	time_point lastCycleTime = std::chrono::high_resolution_clock::now();
 
-	bool quit = false;
-	while(!quit)
+	bool running = true;
+	while(running)
 	{
-		quit = platObj.ProcessInput(chip8obj.keypad);	// passing pointer to keypad[], which is a public  member of chip8_class
+		running  = platObj.ProcessInput(chip8obj.keypad);	// passing pointer to keypad[], which is a public  member of chip8_class
 		time_point currentTime = std::chrono::high_resolution_clock::now();
 		float dt;	// difference in time
 		dt = (std::chrono::duration<float, std::chrono::milliseconds::period>(currentTime - lastCycleTime)).count();
